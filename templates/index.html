@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Water Potability Predictor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Water Potability Predictor</a>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <div class="p-3 mb-2 mx-5 bg-primary-subtle text-primary-emphasis">
+        <form style="width: 50%; margin: 0 auto;" method="post" action="/">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Please Enter the PH value of water</label>
+                <input type="number" step="any" class="form-control" id="formGroupExampleInput" placeholder="7.0" name="ph">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Please Enter the Hardness value of water</label>
+                <input type="number" step="any" class="form-control" id="formGroupExampleInput2" placeholder="150" name="Hardness">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Please Enter the Solids value of water</label>
+                <input type="number" step="any" class="form-control" id="formGroupExampleInput2" placeholder="150" name="Solids">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Please Enter the Chloramines value of
+                    water</label>
+                <input type="number" step="any" class="form-control" id="formGroupExampleInput2" placeholder="150"
+                    name="Chloramines">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Please Enter the Sulfate value of water</label>
+                <input type="number" step="any" class="form-control" id="formGroupExampleInput2" placeholder="150" name="Sulfate">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Please Enter the Conductivity value of
+                    water</label>
+                <input type="number" step="any" class="form-control" id="formGroupExampleInput2" placeholder="150"
+                    name="Conductivity">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Please Enter the Organic_carbon value of
+                    water</label>
+                <input type="number" step="any" class="form-control" id="formGroupExampleInput2" placeholder="150"
+                    name="Organic_carbon">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Please Enter the Trihalomethanes value of
+                    water</label>
+                <input type="number" step="any" class="form-control" id="formGroupExampleInput2" placeholder="150"
+                    name="Trihalomethanes">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Please Enter the Turbidity value of water</label>
+                <input type="number" step="any" class="form-control" id="formGroupExampleInput2" placeholder="150"
+                    name="Turbidity">
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="submit">Predict Potability</button>
+            </div>
+        </form>
+    </div>
+    {% if prediction %}
+    {% if clr == 'red' %}
+        <div class="p-3 mb-2 mx-5 bg-danger-subtle text-success-emphasis">
+            <h4>{{ prediction }}</h4>
+        </div>
+    {% else %}
+        <div class="p-3 mb-2 mx-5 bg-success-subtle text-success-emphasis">
+            <h4>{{ prediction }}</h4>
+        </div>
+    {% endif %} 
+{% endif %}
+</body>
+
+</html>
