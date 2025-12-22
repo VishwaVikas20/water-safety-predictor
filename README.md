@@ -49,6 +49,6 @@ During the development process, I initially experimented with the **XGBClassifie
 ├── templates/
 │   └── index.html                    # User Interface
 ├── app.py                            # Flask Application (API & Routing)
-├── PotabilityPredictor.pkl           # Serialized Random Forest Model
+├── PotabilityPredictor.pkl           # Final pipeline
 ├── water_potability.csv              # Dataset source
 └── README.md
